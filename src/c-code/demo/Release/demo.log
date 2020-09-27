@@ -1,0 +1,30 @@
+﻿    正在创建库 C:\Users\XYQ\Desktop\demo\Release\demo.lib 和对象 C:\Users\XYQ\Desktop\demo\Release\demo.exp
+demo.obj : error LNK2001: 无法解析的外部符号 _BIO_new_mem_buf
+demo.obj : error LNK2001: 无法解析的外部符号 _PEM_read_bio_RSA_PUBKEY
+demo.obj : error LNK2001: 无法解析的外部符号 _PEM_read_bio_RSAPrivateKey
+demo.obj : error LNK2001: 无法解析的外部符号 _RSA_private_decrypt
+demo.obj : error LNK2001: 无法解析的外部符号 _BIO_new
+demo.obj : error LNK2001: 无法解析的外部符号 _BIO_f_base64
+demo.obj : error LNK2001: 无法解析的外部符号 _BIO_set_flags
+demo.obj : error LNK2001: 无法解析的外部符号 _BIO_push
+demo.obj : error LNK2001: 无法解析的外部符号 _BIO_read
+demo.obj : error LNK2001: 无法解析的外部符号 _BIO_free_all
+demo.obj : error LNK2001: 无法解析的外部符号 _NewSdk
+demo.obj : error LNK2001: 无法解析的外部符号 _Init
+demo.obj : error LNK2001: 无法解析的外部符号 _NewSlice
+demo.obj : error LNK2001: 无法解析的外部符号 "public: __thiscall Json::Reader::Reader(void)" (??0Reader@Json@@QAE@XZ)
+demo.obj : error LNK2001: 无法解析的外部符号 "public: __thiscall Json::Value::Value(enum Json::ValueType)" (??0Value@Json@@QAE@W4ValueType@1@@Z)
+demo.obj : error LNK2001: 无法解析的外部符号 "public: __thiscall Json::Value::~Value(void)" (??1Value@Json@@QAE@XZ)
+demo.obj : error LNK2001: 无法解析的外部符号 _GetChatData
+demo.obj : error LNK2001: 无法解析的外部符号 "public: bool __thiscall Json::Reader::parse(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class Json::Value &,bool)" (?parse@Reader@Json@@QAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAVValue@2@_N@Z)
+demo.obj : error LNK2001: 无法解析的外部符号 "public: int __thiscall Json::Value::asInt(void)const " (?asInt@Value@Json@@QBEHXZ)
+demo.obj : error LNK2001: 无法解析的外部符号 "public: class Json::Value & __thiscall Json::Value::operator[](char const *)" (??AValue@Json@@QAEAAV01@PBD@Z)
+demo.obj : error LNK2001: 无法解析的外部符号 "public: bool __thiscall Json::Value::isArray(void)const " (?isArray@Value@Json@@QBE_NXZ)
+demo.obj : error LNK2001: 无法解析的外部符号 "public: unsigned int __thiscall Json::Value::size(void)const " (?size@Value@Json@@QBEIXZ)
+demo.obj : error LNK2001: 无法解析的外部符号 "public: class Json::Value & __thiscall Json::Value::operator[](unsigned int)" (??AValue@Json@@QAEAAV01@I@Z)
+demo.obj : error LNK2001: 无法解析的外部符号 "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __thiscall Json::Value::asString(void)const " (?asString@Value@Json@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ)
+demo.obj : error LNK2001: 无法解析的外部符号 _DecryptData
+demo.obj : error LNK2001: 无法解析的外部符号 _GetContentFromSlice
+demo.obj : error LNK2001: 无法解析的外部符号 "public: double __thiscall Json::Value::asDouble(void)const " (?asDouble@Value@Json@@QBENXZ)
+demo.obj : error LNK2001: 无法解析的外部符号 _DestroySdk
+C:\Users\XYQ\Desktop\demo\Release\demo.dll : fatal error LNK1120: 28 个无法解析的外部命令
