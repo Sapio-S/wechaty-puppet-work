@@ -14,6 +14,7 @@ extern "C" {
 	__declspec(dllexport) int getMedia(int, char*, char*, char*);
 	__declspec(dllexport) int removeFile(char*);
 	__declspec(dllexport) char* getMedia2(int, char*);
+	__declspec(dllexport) int getSeq();
 #ifdef __cplusplus
 }
 #endif
@@ -48,7 +49,9 @@ static char* priKey;
 
 static WeWorkFinanceSdk_t* sdk;
 static string cache_content;
-
+static int seq;
+//static char* a;
+//static char* b;
 
 #define STR_VALUE(val) #val
 #define STR(name) STR_VALUE(name)
@@ -75,6 +78,10 @@ static string cache_content;
 	pclose(p);
 	return i == MD5_LEN;
 }*/
+
+int getSeq() {
+	return seq;
+}
 
 RSA * createRSA(const char* key, int publickey)
 {
@@ -151,11 +158,16 @@ void initial(char * a, char* b) {
 	file.read(priKey, length);
 	file.close();
 	
+	//a = a_;
+	//b = b_;
+
 	// init api
 	int ret = Init(sdk, a, b);
 	if (ret != 0) {
 		printf("Wechat Work Error: init sdk err ret:%d\n", ret);
 	}
+
+	cache_content = "";
 }
 
 void destroy() {
@@ -169,6 +181,7 @@ char* getchat(int firstTime, int count, int seq_) {
 	}
 	int ret = 0;
 
+	
 	Slice_t* chatDatas = NewSlice();
 	ret = GetChatData(sdk, seq_, count, nullptr, nullptr, 5, chatDatas);
 	if (ret != 0) {
@@ -196,7 +209,6 @@ char* getchat(int firstTime, int count, int seq_) {
 
 					int publickey_ver;
 					string msgid, encrypt_random_key, encrypt_chat_msg;
-					int seq;
 					if (object.HasMember("seq") && object["seq"].IsInt()) {
 						seq = object["seq"].GetInt();
 					}
@@ -264,7 +276,7 @@ int getMedia(int size, char* sdkFileid, char* tmp, char* md5) {
 	}
 	
 	while (!media.is_finish) {
-		std::cout << "fecthing media data"<<std::endl;
+		//std::cout << "fecthing media data"<<std::endl;
 		if (ret != 0) {
 			std::cout << "Wechat Work Error: error occurs when trying to get media data, ret: " << ret << std::endl;
 			std::cout << "please check https://work.weixin.qq.com/api/doc/90000/90135/91552 for more information\n";
